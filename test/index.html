@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profil - Vorian Gustaf Sumampouw</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <div class="profile-header">
+      <img src="img/Screenshot 2025-10-28 040008.png" alt="Foto Profil" class="profile-img">
+      <div>
+        <h1>Vorian Gustaf Sumampouw</h1>
+        <p>UI/UX Designer | Tangerang Selatan</p>
+      </div>
+    </div>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="#" data-target="biodata" class="active">Biodata</a></li>
+      <li><a href="#" data-target="pendidikan">Pendidikan</a></li>
+      <li><a href="#" data-target="pengalaman">Pengalaman</a></li>
+      <li><a href="#" data-target="keahlian">Keahlian</a></li>
+    </ul>
+  </nav>
+
+  <section id="content">
+    <article id="biodata" class="active">
+      <h2>🧍‍♂️ Biodata</h2>
+      <p><strong>Nama:</strong> Vorian Gustaf Sumampouw</p>
+      <p><strong>Tempat/Tanggal Lahir:</strong> Tangerang Selatan, 2001</p>
+      <p><strong>Alamat:</strong> Graha Selatan</p>
+      <p><strong>Email:</strong> voriangustafs@gmail.com</p>
+      <p><strong>Telepon:</strong> 082297687312</p>
+    </article>
+
+    <article id="pendidikan">
+      <h2>🎓 Pendidikan</h2>
+      <ul>
+        <li>SD Katolik Ricci 2</li>
+        <li>SMP Katolik Ricci 2</li>
+        <li>SMA Katolik Ricci 2</li>
+      </ul>
+    </article>
+
+    <article id="pengalaman">
+      <h2>💼 Pengalaman</h2>
+      <p>Magang di <strong>Kementerian Pertanian</strong> sebagai <em>UI/UX Designer</em>.</p>
+      <p>Fokus pada pembuatan wireframe, user flow, dan prototipe aplikasi internal.</p>
+    </article>
+
+    <article id="keahlian">
+      <h2>🧠 Keahlian</h2>
+      <ul>
+        <li>Figma (UI/UX Design)</li>
+        <li>Video Editing</li>
+      </ul>
+    </article>
+  </section>
+
+  <aside>
+    <h2>📩 Kontak</h2>
+    <p><strong>Email:</strong> <a href="mailto:voriangustafs@gmail.com">voriangustafs@gmail.com</a></p>
+    <p><strong>Telepon:</strong> 082297687312</p>
+    <p><strong>Alamat:</strong> Graha Selatan, Tangerang Selatan</p>
+  </aside>
+
+  <footer>
+    <p>© 2025 Vorian Gustaf Sumampouw | Web Profil UTS</p>
+  </footer>
+
+  <script>
+    const links = document.querySelectorAll('nav a');
+    const articles = document.querySelectorAll('section article');
+
+    links.forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+
+        links.forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
+
+        const target = link.getAttribute('data-target');
+        articles.forEach(article => {
+          article.classList.remove('active');
+          if (article.id === target) article.classList.add('active');
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>
